@@ -1,6 +1,6 @@
 # Script to send an email when there is RDS alert
 
-This is a script to send notifications through e-mails when a RDS alert is generated.
+This is a script to send notifications through e-mail when a RDS alert is generated.
 
 **Step 1** <br />
 Create a SNS subscription/topic. Make sure you change the parameter ***--notification-endpoint***.
