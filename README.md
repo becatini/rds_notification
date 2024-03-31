@@ -37,7 +37,7 @@ Make sure you change the variables/parameter below:  <br />
 ***db="rds_instance"*** <br />
 ***sns_topic="my_sns_topic_name"*** <br />
 
-```
+```bash
 db="rds_instance"
 region="us-west-1"
 RDSNotification=$(aws sns create-topic --name $sns_topic --region $region --query "TopicArn" --output=text)
@@ -46,6 +46,8 @@ aws rds create-event-subscription \
  --subscription-name "RDS-Notification-"$db \
  --sns-topic-arn $RDSNotification \
  --source-type "db-instance" \
+
+
  --source-ids $db \
  --event-categories "availability" "backup" "configuration change" "maintenance" "notification" "recovery" "deletion" "failover" "failure" "low storage" \
  --enabled  \
